@@ -19,8 +19,7 @@ env:
 
 script:
   - if [ -z "$TARGET" ]; then cargo test --verbose; fi
-  - if [ ! -z "$TARGET" ]; then cargo install cross; fi
-  - if [ ! -z "$TARGET" ]; then cross test --target $TARGET --verbose; fi
+  - if [ ! -z "$TARGET" ]; then cargo install cross; cross test --target $TARGET --verbose; fi
 
 matrix:
   exclude:
