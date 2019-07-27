@@ -5,7 +5,18 @@ rust:
   - beta
   - nightly
 
-matrix:
-  allow_failures:
-    - rust: nightly
-  fast_finish: true
+services: docker
+
+env:
+  -
+  - BIT_32=1
+
+os:
+  - linux
+  - osx
+  - windows
+
+script:
+  - if [ "$BIT_32" != "1" ]; then cargo test --verbose; fi
+  - if [ "$BIT_32" = "1" ]; then cargo install cross; fi
+  - if [ "$BIT_32" = "1" ]; then if [ "$TRAVIS_OS_NAME" = "linux" ]; then cross test --verbose; fi fi
