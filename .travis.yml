@@ -1,5 +1,7 @@
 language: rust
 
+services: docker
+
 rust:
   - stable
   - beta
@@ -10,17 +12,23 @@ os:
   - osx
   - windows
 
+env:
+  -
+  - TARGET=i686-unknown-linux-gnu
+  - TARGET=i686-pc-windows-gnu
+
+script:
+  - if [ -z "$TARGET" ]; then cargo test --verbose; fi
+  - if [ ! -z "$TARGET" ]; then cargo install cross; fi
+  - if [ ! -z "$TARGET" ]; then cross test --target $TARGET --verbose; fi
+
 matrix:
-  include:
-    - os: linux
+  exclude:
+    - os: osx
       env: TARGET=i686-unknown-linux-gnu
-      services: docker
-      script:
-        - cargo install cross
-        - cross test --target $TARGET --verbose
-    - os: linux
+    - os: osx
       env: TARGET=i686-pc-windows-gnu
-      services: docker
-      script:
-        - cargo install cross
-        - cross test --target $TARGET --verbose
+    - os: windows
+      env: TARGET=i686-unknown-linux-gnu
+    - os: windows
+      env: TARGET=i686-pc-windows-gnu
