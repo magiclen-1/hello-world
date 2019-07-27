@@ -1,10 +1,15 @@
 language: rust
 
 rust:
-- stable
-- beta
-- nightly
+  - stable
+  - beta
+  - nightly
+
 os:
-- linux
-- osx
-- windows
+  - linux
+  - osx
+  - windows
+
+env:
+  - FOO=bar BAR=foo
+  - BAR=foo
