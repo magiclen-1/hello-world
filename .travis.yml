@@ -1,16 +1,11 @@
 language: rust
 
-env:
-  global:
-    - GLOBAL=foobar
-  matrix:
-    -
-    - FOO=bar BAR=foo
-    - BAR=foo
-
 rust:
   - stable
   - beta
   - nightly
 
-cache: cargo
+matrix:
+  allow_failures:
+    - rust: nightly
+  fast_finish: true
