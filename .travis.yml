@@ -1,24 +1,25 @@
 language: rust
 
+rust:
+  - stable
+  - beta
+  - nightly
+
+os:
+  - linux
+  - osx
+  - windows
+
 matrix:
   include:
-    - os:
-        - linux
-        - osx
-        - windows
-      rust:
-        - stable
-        - beta
-        - nightly
     - os: linux
-      env:
-        matrix:
-          - TARGET=i686-unknown-linux-gnu
-          - TARGET=i686-pc-windows-gnu
-      rust:
-        - stable
-        - beta
-        - nightly
+      env: TARGET=i686-unknown-linux-gnu
+      services: docker
+      script:
+        - cargo install cross
+        - cross test --target $TARGET --verbose
+    - os: linux
+      env: TARGET=i686-pc-windows-gnu
       services: docker
       script:
         - cargo install cross
