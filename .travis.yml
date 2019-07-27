@@ -12,8 +12,9 @@ matrix:
         - nightly
     - os: linux
       env:
-        - TARGET=i686-unknown-linux-gnu
-        - TARGET=i686-pc-windows-gnu
+        matrix:
+          - TARGET=i686-unknown-linux-gnu
+          - TARGET=i686-pc-windows-gnu
       rust:
         - stable
         - beta
