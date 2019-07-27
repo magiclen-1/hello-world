@@ -17,5 +17,4 @@ env:
 
 script:
   - [ ! -z "$NO_DEFAULT_FEATURES" ] && NO_DEFAULT_FEATURES="--no-default-features"
-  - cargo test --verbose $NO_DEFAULT_FEATURES --features
-  - cargo test --verbose --no-default-features --features "$FEATURES"
+  - cargo test --verbose $NO_DEFAULT_FEATURES --features "$FEATURES"
