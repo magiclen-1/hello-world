@@ -12,5 +12,10 @@ os:
 
 env:
   -
-  - FOO=bar BAR=foo
-  - BAR=foo
+  - NO_DEFAULT_FEATURES=1
+  - NO_DEFAULT_FEATURES=1 FEATURES="std"
+
+script:
+  - [ ! -z "$NO_DEFAULT_FEATURES" ] && NO_DEFAULT_FEATURES="--no-default-features"
+  - cargo test --verbose $NO_DEFAULT_FEATURES --features
+  - cargo test --verbose --no-default-features --features "$FEATURES"
