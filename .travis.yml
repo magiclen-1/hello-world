@@ -11,5 +11,6 @@ os:
   - windows
 
 env:
+  -
   - FOO=bar BAR=foo
   - BAR=foo
