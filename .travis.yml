@@ -1,6 +1,5 @@
 language: rust
 
-
 matrix:
   include:
     - os:
@@ -12,6 +11,9 @@ matrix:
         - beta
         - nightly
     - os: linux
+      env:
+        - TARGET=i686-unknown-linux-gnu
+        - TARGET=i686-pc-windows-gnu
       rust:
         - stable
         - beta
@@ -19,13 +21,4 @@ matrix:
       services: docker
       script:
         - cargo install cross
-        - cross test --target i686-unknown-linux-gnu --verbose
-    - os: linux # To compile for Windows x86
-      rust:
-        - stable
-        - beta
-        - nightly
-      services: docker
-      script:
-        - cargo install cross
-        - cross test --target i686-pc-windows-gnu --verbose
+        - cross test --target $TARGET --verbose
