@@ -19,4 +19,5 @@ os:
 script:
   - if [ "$BIT_32" != "1" ]; then cargo test --verbose; fi
   - if [ "$BIT_32" = "1" ]; then cargo install cross; fi
-  - if [ "$BIT_32" = "1" ]; then if [ "$TRAVIS_OS_NAME" = "linux" ]; then cross test --verbose; fi fi
+  - if [ "$BIT_32" = "1" ]; then if [ "$TRAVIS_OS_NAME" = "linux" ]; then cross test --target i686-unknown-linux-gnu --verbose; fi fi
+  - if [ "$BIT_32" = "1" ]; then if [ "$TRAVIS_OS_NAME" = "windows" ]; then cross test --target i686-pc-windows-gnu --verbose; fi fi
