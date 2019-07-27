@@ -23,10 +23,6 @@ script:
 
 matrix:
   exclude:
-    - os: osx
-      env: TARGET=i686-unknown-linux-gnu
-    - os: osx
-      env: TARGET=i686-pc-windows-gnu
     - os: windows
       env: TARGET=i686-unknown-linux-gnu
     - os: windows
