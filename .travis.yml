@@ -13,6 +13,7 @@ matrix:
       env: TARGET=x86_64-pc-windows-gnu
       compiler: gcc
       install:
+        - rustup set default-host $TARGET
         - rustup target add $TARGET
         - choco install -y mingw
         - mkdir -p ~/.cargo
@@ -23,6 +24,7 @@ matrix:
       env: TARGET=x86_64-pc-windows-gnu
       compiler: gcc
       install:
+        - rustup set default-host $TARGET
         - rustup target add $TARGET
         - choco install -y mingw
         - mkdir -p ~/.cargo
@@ -33,6 +35,7 @@ matrix:
       env: TARGET=x86_64-pc-windows-gnu
       compiler: gcc
       install:
+        - rustup set default-host $TARGET
         - rustup target add $TARGET
         - choco install -y mingw
         - mkdir -p ~/.cargo
