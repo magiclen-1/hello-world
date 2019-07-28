@@ -6,8 +6,6 @@ rust:
 os:
   - windows
 
-before_install: openssl aes-256-cbc -K $encrypted_9639d97fb148_key -iv $encrypted_9639d97fb148_iv -in github_repo_deploy_key.enc -out ~\/.ssh/github_repo_deploy_key -d
-
 matrix:
   include:
     - rust: stable
