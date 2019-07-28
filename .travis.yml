@@ -30,15 +30,18 @@ matrix:
     - rust: stable
       os: windows
       env: TARGET=x86_64-pc-windows-gnu
+      compiler: gcc
       install: rustup target add $TARGET
       script: cargo test --target $TARGET
     - rust: beta
       os: windows
       env: TARGET=x86_64-pc-windows-gnu
+      compiler: gcc
       install: rustup target add $TARGET
       script: cargo test --target $TARGET
     - rust: nightly
       os: windows
       env: TARGET=x86_64-pc-windows-gnu
+      compiler: gcc
       install: rustup target add $TARGET
       script: cargo test --target $TARGET
