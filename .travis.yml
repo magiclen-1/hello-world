@@ -31,17 +31,26 @@ matrix:
       os: windows
       env: TARGET=x86_64-pc-windows-gnu
       compiler: gcc
-      install: rustup target add $TARGET
+      install:
+        - rustup target add $TARGET
+        - mkdir -p ~/.cargo
+        - printf "\n[target.$TARGET]\nlinker = "x86_64-w64-mingw32-gcc"\n" >> ~/.cargo/config
       script: cargo test --target $TARGET
     - rust: beta
       os: windows
       env: TARGET=x86_64-pc-windows-gnu
       compiler: gcc
-      install: rustup target add $TARGET
+      install:
+        - rustup target add $TARGET
+        - mkdir -p ~/.cargo
+        - printf "\n[target.$TARGET]\nlinker = "x86_64-w64-mingw32-gcc"\n" >> ~/.cargo/config
       script: cargo test --target $TARGET
     - rust: nightly
       os: windows
       env: TARGET=x86_64-pc-windows-gnu
       compiler: gcc
-      install: rustup target add $TARGET
+      install:
+        - rustup target add $TARGET
+        - mkdir -p ~/.cargo
+        - printf "\n[target.$TARGET]\nlinker = "x86_64-w64-mingw32-gcc"\n" >> ~/.cargo/config
       script: cargo test --target $TARGET
