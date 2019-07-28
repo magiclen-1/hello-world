@@ -16,7 +16,7 @@ matrix:
         - rustup target add $TARGET
         - choco install -y mingw
         - mkdir -p ~/.cargo
-        - printf '\n[target.'$TARGET']\nlinker = "/c/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/x86_64-w64-mingw32-gcc"\nar = "/c/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/x86_64-w64-mingw32-ar"\n' >> ~/.cargo/config
+        - printf '\n[target.'$TARGET']\nlinker = "C:\\\\ProgramData\\\\chocolatey\\\\lib\\\\mingw\\\\tools\\\\install\\\\mingw64\\\\bin\\\\x86_64-w64-mingw32-gcc"\nar = "C:\\\\ProgramData\\\\chocolatey\\\\lib\\\\mingw\\\\tools\\\\install\\\\mingw64\\\\bin\\\\x86_64-w64-mingw32-ar"\n' >> ~/.cargo/config
       script: cargo test --target $TARGET
     - rust: beta
       os: windows
@@ -26,7 +26,7 @@ matrix:
         - rustup target add $TARGET
         - choco install -y mingw
         - mkdir -p ~/.cargo
-        - printf '\n[target.'$TARGET']\nlinker = "/c/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/x86_64-w64-mingw32-gcc"\nar = "/c/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/x86_64-w64-mingw32-ar"\n' >> ~/.cargo/config
+        - printf '\n[target.'$TARGET']\nlinker = "C:\\\\ProgramData\\\\chocolatey\\\\lib\\\\mingw\\\\tools\\\\install\\\\mingw64\\\\bin\\\\x86_64-w64-mingw32-gcc"\nar = "C:\\\\ProgramData\\\\chocolatey\\\\lib\\\\mingw\\\\tools\\\\install\\\\mingw64\\\\bin\\\\x86_64-w64-mingw32-ar"\n' >> ~/.cargo/config
       script: cargo test --target $TARGET
     - rust: nightly
       os: windows
@@ -36,5 +36,5 @@ matrix:
         - rustup target add $TARGET
         - choco install -y mingw
         - mkdir -p ~/.cargo
-        - printf '\n[target.'$TARGET']\nlinker = "/c/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/x86_64-w64-mingw32-gcc"\nar = "/c/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin/x86_64-w64-mingw32-ar"\n' >> ~/.cargo/config
+        - printf '\n[target.'$TARGET']\nlinker = "C:\\\\ProgramData\\\\chocolatey\\\\lib\\\\mingw\\\\tools\\\\install\\\\mingw64\\\\bin\\\\x86_64-w64-mingw32-gcc"\nar = "C:\\\\ProgramData\\\\chocolatey\\\\lib\\\\mingw\\\\tools\\\\install\\\\mingw64\\\\bin\\\\x86_64-w64-mingw32-ar"\n' >> ~/.cargo/config
       script: cargo test --target $TARGET
