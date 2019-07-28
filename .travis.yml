@@ -14,7 +14,7 @@ matrix:
       install:
         - rustup target add $TARGET
         - choco install msys2 -y
-        - C:\tools\msys64\usr\bin\pacman.exe -S mingw-w64-x86_64-toolchain --noconfirm
+        - "C:\\tools\\msys64\\usr\\bin\\pacman.exe" -S mingw-w64-x86_64-toolchain --noconfirm
         - mkdir -p ~/.cargo
         - printf '\n[target.'$TARGET']\nlinker = "C:\\\\tools\\\\msys64\\\\mingw64\\\\bin\\\\gcc.exe"\nar = "C:\\\\tools\\\\msys64\\\\mingw64\\\\bin\\\\ar.exe"\n' >> ~/.cargo/config
       script: cargo test --target $TARGET
@@ -25,7 +25,7 @@ matrix:
       install:
         - rustup target add $TARGET
         - choco install msys2 -y
-        - C:\tools\msys64\usr\bin\pacman.exe -S mingw-w64-x86_64-toolchain --noconfirm
+        - "C:\\tools\\msys64\\usr\\bin\\pacman.exe" -S mingw-w64-x86_64-toolchain --noconfirm
         - mkdir -p ~/.cargo
         - printf '\n[target.'$TARGET']\nlinker = "C:\\\\tools\\\\msys64\\\\mingw64\\\\bin\\\\gcc.exe"\nar = "C:\\\\tools\\\\msys64\\\\mingw64\\\\bin\\\\ar.exe"\n' >> ~/.cargo/config
       script: cargo test --target $TARGET
@@ -36,7 +36,7 @@ matrix:
       install:
         - rustup target add $TARGET
         - choco install msys2 -y
-        - C:\tools\msys64\usr\bin\pacman.exe -S mingw-w64-x86_64-toolchain --noconfirm
+        - "C:\\tools\\msys64\\usr\\bin\\pacman.exe" -S mingw-w64-x86_64-toolchain --noconfirm
         - mkdir -p ~/.cargo
         - printf '\n[target.'$TARGET']\nlinker = "C:\\\\tools\\\\msys64\\\\mingw64\\\\bin\\\\gcc.exe"\nar = "C:\\\\tools\\\\msys64\\\\mingw64\\\\bin\\\\ar.exe"\n' >> ~/.cargo/config
       script: cargo test --target $TARGET
