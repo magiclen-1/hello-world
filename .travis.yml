@@ -11,9 +11,9 @@ matrix:
     - rust: stable
       os: windows
       env: TARGET=x86_64-pc-windows-gnu
-      compiler: gcc
       install:
         - rustup set default-host $TARGET
+        - rustup default $TRAVIS_RUST_VERSION
         - rustup target add $TARGET
         - choco install -y mingw
         - mkdir -p ~/.cargo
@@ -22,9 +22,9 @@ matrix:
     - rust: beta
       os: windows
       env: TARGET=x86_64-pc-windows-gnu
-      compiler: gcc
       install:
         - rustup set default-host $TARGET
+        - rustup default $TRAVIS_RUST_VERSION
         - rustup target add $TARGET
         - choco install -y mingw
         - mkdir -p ~/.cargo
@@ -33,9 +33,9 @@ matrix:
     - rust: nightly
       os: windows
       env: TARGET=x86_64-pc-windows-gnu
-      compiler: gcc
       install:
         - rustup set default-host $TARGET
+        - rustup default $TRAVIS_RUST_VERSION
         - rustup target add $TARGET
         - choco install -y mingw
         - mkdir -p ~/.cargo
