@@ -14,8 +14,9 @@ matrix:
       compiler: gcc
       install:
         - rustup target add $TARGET
+        - choco install msys2
         - mkdir -p ~/.cargo
-        - printf '\n[target.'$TARGET']\nlinker = "x86_64-w64-mingw32-gcc"\n' >> ~/.cargo/config
+        - printf '\n[target.'$TARGET']\nlinker = "C:\\\\tools\\\\msys64\\\\mingw64\\\\bin\\\\gcc.exe"\nar = "C:\\\\tools\\\\msys64\\\\mingw64\\\\bin\\\\ar.exe"\n' >> ~/.cargo/config
       script: cargo test --target $TARGET
     - rust: beta
       os: windows
