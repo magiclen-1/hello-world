@@ -15,7 +15,6 @@ matrix:
         - rustup set default-host $TARGET
         - rustup default $TRAVIS_RUST_VERSION
         - rustup target add $TARGET
-        - choco install -y mingw
         - mkdir -p ~/.cargo
         - printf '\n[target.'$TARGET']\nlinker = "C:\\\\ProgramData\\\\chocolatey\\\\lib\\\\mingw\\\\tools\\\\install\\\\mingw64\\\\bin\\\\x86_64-w64-mingw32-gcc"\nar = "C:\\\\ProgramData\\\\chocolatey\\\\lib\\\\mingw\\\\tools\\\\install\\\\mingw64\\\\bin\\\\x86_64-w64-mingw32-ar"\n' >> ~/.cargo/config
       script: cargo test --target $TARGET
@@ -26,7 +25,6 @@ matrix:
         - rustup set default-host $TARGET
         - rustup default $TRAVIS_RUST_VERSION
         - rustup target add $TARGET
-        - choco install -y mingw
         - mkdir -p ~/.cargo
         - printf '\n[target.'$TARGET']\nlinker = "C:\\\\ProgramData\\\\chocolatey\\\\lib\\\\mingw\\\\tools\\\\install\\\\mingw64\\\\bin\\\\x86_64-w64-mingw32-gcc"\nar = "C:\\\\ProgramData\\\\chocolatey\\\\lib\\\\mingw\\\\tools\\\\install\\\\mingw64\\\\bin\\\\x86_64-w64-mingw32-ar"\n' >> ~/.cargo/config
       script: cargo test --target $TARGET
@@ -37,7 +35,6 @@ matrix:
         - rustup set default-host $TARGET
         - rustup default $TRAVIS_RUST_VERSION
         - rustup target add $TARGET
-        - choco install -y mingw
         - mkdir -p ~/.cargo
         - printf '\n[target.'$TARGET']\nlinker = "C:\\\\ProgramData\\\\chocolatey\\\\lib\\\\mingw\\\\tools\\\\install\\\\mingw64\\\\bin\\\\x86_64-w64-mingw32-gcc"\nar = "C:\\\\ProgramData\\\\chocolatey\\\\lib\\\\mingw\\\\tools\\\\install\\\\mingw64\\\\bin\\\\x86_64-w64-mingw32-ar"\n' >> ~/.cargo/config
       script: cargo test --target $TARGET
